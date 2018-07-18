@@ -32,8 +32,9 @@ pipeline {
         stage('Sonar') {
             steps {
                 echo 'Sonar Scanner'
-		sh 'mvn clean install'
-		sh 'mvn sonar:sonar'	    
+		withSonarQubeEnv('sonarqube') {
+      		sh 'mvn clean install'
+		sh 'mvn sonar:sonar'
             }
         }
         stage('Package') {
