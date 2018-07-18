@@ -33,8 +33,7 @@ pipeline {
             steps {
                 echo 'Sonar Scanner'
 		withSonarQubeEnv('sonarqube') {
-      		sh 'mvn clean install'
-		sh 'mvn sonar:sonar'
+      		sh 'mvn clean install -D sonar.host.http://35.237.97.186:9000
 		}
             }
         }
