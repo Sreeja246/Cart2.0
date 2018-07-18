@@ -47,6 +47,15 @@ pipeline {
             steps {
                 echo 'Deploying to nexus'
 		echo '@@@@@@@@@@@@@@@@'
+		    nexusArtifactUploader artifacts: [
+   [artifactId: 'nexus-artifact-uploader', classifier: 'debug', file: 'nexus-artifact-uploader.jar', type: 'jar'], 
+   [artifactId: 'nexus-artifact-uploader', classifier: 'debug', file: 'nexus-artifact-uploader.hpi', type: 'hpi']
+],  
+nexusUrl: 'http://35.229.90.75:8081/nexus', 
+nexusVersion: 'nexus2', 
+protocol: 'http', 
+repository: 'NexusArtifactUploader', 
+version: '2.4'
             }
         }
     }
