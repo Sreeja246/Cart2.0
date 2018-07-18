@@ -45,25 +45,23 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-               steps {
-      nexusArtifactUploader {
-        nexusVersion('nexus3')
-        protocol('http')
-        nexusUrl('http://35.229.90.75:8081')
-        groupId('com.repo')
-        version('1.0')
-        repository('CartArtifacts')
-        credentialsId('44620c50-1589-4617-a677-7563985e46e1')
-        artifact {
-            artifactId('Cart2.0')
-            type('jar')
-            classifier('debug')
-            file('cart2.0.jar')
-        }
-      }
-            }
-        }
-    }
+      		nexusArtifactUploader {
+        		nexusVersion('nexus3')
+        		protocol('http')
+        		nexusUrl('http://35.229.90.75:8081')
+        		groupId('com.repo')
+        		version('1.0')
+        		repository('CartArtifacts')
+        		credentialsId('44620c50-1589-4617-a677-7563985e46e1')
+		}
+        	artifact {
+            		artifactId('Cart2.0')
+            		type('jar')
+            		classifier('debug')
+            		file('cart2.0.jar')
+        	}
+      	    }
+         }
     
     post {
         always {
