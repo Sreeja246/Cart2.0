@@ -45,7 +45,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo 'Deploying to nexus'
-		echo '@@@@@@@@@@@@@@@@@@@'
+		echo '@@@@@@@@@@@@@@@@'
             }
         }
     }
