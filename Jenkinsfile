@@ -1,13 +1,14 @@
 pipeline {
     agent any
 	tools{
-		maven 'maven'
+		maven 'Maven'
 		
 	}
     stages {
         stage('Checkout') {
             steps {
                 echo 'Checkout'
+		git url: 'git@github.com:Sreeja246/Cart2.0.git'
             }
         }
         stage('Build') {
@@ -31,11 +32,8 @@ pipeline {
         stage('Sonar') {
             steps {
                 echo 'Sonar Scanner'
-               	
-			    	sh 'mvn clean install'
-				sh 'mvn sonar:sonar'
-				 
-			    
+		sh 'mvn clean install'
+		sh 'mvn sonar:sonar'	    
             }
         }
         stage('Package') {
