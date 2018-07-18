@@ -35,6 +35,7 @@ pipeline {
 		withSonarQubeEnv('sonarqube') {
       		sh 'mvn clean install'
 		sh 'mvn sonar:sonar'
+		}
             }
         }
         stage('Package') {
