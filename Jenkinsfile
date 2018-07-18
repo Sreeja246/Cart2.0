@@ -2,13 +2,12 @@ pipeline {
     agent any
 	tools{
 		maven 'Maven'
-		
 	}
     stages {
         stage('Checkout') {
             steps {
                 echo 'Checkout'
-		git url: 'git@github.com:Sreeja246/Cart2.0.git'
+		        git url: 'git@github.com:Sreeja246/Cart2.0.git'
             }
         }
         stage('Build') {
@@ -32,9 +31,9 @@ pipeline {
         stage('Sonar') {
             steps {
                 echo 'Sonar Scanner'
-		withSonarQubeEnv('sonarqube') {
-      		sh 'mvn clean install -D sonar.host.http://35.237.97.186:9000'
-		}
+		        withSonarQubeEnv('sonarqube') {
+      		        sh 'mvn clean install -D sonar.host.http://35.237.97.186:9000'
+		        }
             }
         }
         stage('Package') {
@@ -44,7 +43,26 @@ pipeline {
             }
         }
         
-    
+        stage('Deploy') {
+            steps {
+      		    nexusArtifactUploader {
+        		    nexusVersion('nexus3')
+        		    protocol('http')
+        		    nexusUrl('http://35.229.90.75:8081')
+        		    groupId('com.repo')
+        		    version('1.0')
+        		    repository('CartArtifacts')
+        		    credentialsId('44620c50-1589-4617-a677-7563985e46e1')
+		     }
+        	    artifact {
+            		artifactId('Cart2.0')
+            		type('jar')
+            		classifier('debug')
+            		file('cart2.0.jar')
+        	    }
+      	    }
+        }
+    }
     post {
         always {
             echo 'JENKINS PIPELINE'
