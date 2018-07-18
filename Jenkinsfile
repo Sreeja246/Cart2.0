@@ -45,16 +45,22 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-                echo 'Deploying to nexus'
-		echo '@@@@@@@@@@@@@@@@'
-		nexusArtifactUploader artifacts: [[artifactId: 'nexus-artifact-uploader', classifier: 'debug', file: 'nexus-artifact-uploader.jar', type: 'jar'],[artifactId: 'nexus-artifact-uploader', classifier: 'debug', file: 'nexus-artifact-uploader.hpi', type: 'hpi']],  
-                credentialsId: '44620c50-1589-4617-a677-7563985e46e1', 	
-		groupId: 'sp.sd',
-		nexusUrl: 'http://35.229.90.75:8081/nexus', 
-                nexusVersion: 'nexus2', 
-                protocol: 'http', 
-                repository: 'NexusArtifactUploader', 
-                version: '2.4'
+               steps {
+      nexusArtifactUploader {
+        nexusVersion('nexus3')
+        protocol('http')
+        nexusUrl('http://35.229.90.75:8081')
+        groupId('com.repo')
+        version('1.0')
+        repository('CartArtifacts')
+        credentialsId('44620c50-1589-4617-a677-7563985e46e1')
+        artifact {
+            artifactId('Cart2.0')
+            type('jar')
+            classifier('debug')
+            file('cart2.0.jar')
+        }
+      }
             }
         }
     }
