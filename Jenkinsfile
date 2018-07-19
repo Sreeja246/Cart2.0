@@ -42,10 +42,10 @@ pipeline {
                 sh 'mvn package'
             }
         }
-	stage('Deploy') {
+        stage('Deploy') {
             steps {
                 echo 'Deploying to nexus'
-                sh 'mvn package'
+		sh 'mvn deploy'
             }
         }
 	
