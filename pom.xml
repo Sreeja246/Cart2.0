@@ -41,13 +41,13 @@
 	</build>
 <distributionManagement>
 		<repository>
-			<id>pipelinerepo</id>
+			<id>deploymentRepo</id>
 			<name>pipelineRepository</name>
 			<url>http://35.229.90.75:8081/repository/pipelineRepository/</url>
 		</repository>
  
 		<snapshotRepository>
-			<id>pipelinerepo</id>
+			<id>deploymentRepo</id>
 			<name>pipelineRepository</name>
 			<url>http://35.229.90.75:8081/repository/pipelineRepository/</url>
 		</snapshotRepository>
