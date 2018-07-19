@@ -41,15 +41,15 @@
 	</build>
 <distributionManagement>
 		<repository>
-			<id>deploymentRepo</id>
-			<name>Internal Releases</name>
+			<id>pipelinerepo</id>
+			<name>pipelineRepository</name>
 			<url>http://35.229.90.75:8081/repository/maven-releases/</url>
 		</repository>
  
 		<snapshotRepository>
-			<id>deploymentRepo</id>
-			<name>Internal Releases</name>
+			<id>pipelinerepo</id>
+			<name>pipelineRepository</name>
 			<url>http://35.229.90.75:8081/repository/maven-snapshots/</url>
-	</snapshotRepository>
+		</snapshotRepository>
 </distributionManagement>
 </project>
