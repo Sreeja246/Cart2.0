@@ -45,7 +45,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo 'Deploying to nexus'
-		sh 'mvn clean default-deploy'
+		    sh 'mvn deploy'
             }
         }
 	
