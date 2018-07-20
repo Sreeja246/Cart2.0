@@ -46,6 +46,7 @@ pipeline {
             steps {
                 echo 'Deploying to nexus'
 		sh 'mvn deploy'
+		-DaltDeploymentRepository=maven-snapshots.xml::default::http://35.196.68.15:8081
             }
         }
 	
