@@ -43,13 +43,13 @@
 		<repository>
 			<id>deploymentRepo</id>
 			<name>pipelineRepository</name>
-			<url>http://35.229.90.75:8081/repository/maven-releases/</url>
+			<url>http://35.229.90.75:8081/#browse/browse/components:maven-releases</url>
 		</repository>
  
 		<snapshotRepository>
 			<id>deploymentRepo</id>
 			<name>pipelineRepository</name>
-			<url>http://35.229.90.75:8081/repository/maven-releases/</url>
+			<url>http://35.229.90.75:8081/#browse/browse/components:maven-releases</url>
 		</snapshotRepository>
 </distributionManagement>
 </project>
