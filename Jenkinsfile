@@ -31,9 +31,9 @@ pipeline {
         stage('Sonar') {
             steps {
                 echo 'Sonar Scanner'
-		        withSonarQubeEnv('sonarqube') {
-      		        sh 'mvn clean install -D sonar.host.http://35.237.97.186:9000'
-		        }
+		withSonarQubeEnv('sonarqube') {
+      		    sh 'mvn clean install -D sonar.host.http://35.237.97.186:9000'
+		}
             }
         }
         stage('Package') {
@@ -45,7 +45,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo 'Deploying to nexus'
-		sh 'deploy'
+		sh 'mvn deploy'
             }
         }
 	
