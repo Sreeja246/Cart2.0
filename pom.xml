@@ -41,7 +41,7 @@
 	</build>
 	<distributionManagement>
 		<repository>
-			<id>maven-snopshots</id>
+			<id>maven-snapshots</id>
 			<name>Internal Releases</name>
 			<url>http://35.196.68.15:8081/repository/maven-releases/</url>
 		</repository>
