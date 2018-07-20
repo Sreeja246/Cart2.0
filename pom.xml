@@ -41,13 +41,13 @@
 	</build>
 	<distributionManagement>
 		<repository>
-			<id>deploymentRepo</id>
+			<id>maven-snopshots</id>
 			<name>Internal Releases</name>
 			<url>http://35.196.68.15:8081/repository/maven-releases/</url>
 		</repository>
  
 		<snapshotRepository>
-			<id>deploymentRepo</id>
+			<id>maven-snapshots</id>
 			<name>Internal Releases</name>
 			<url>http://35.196.68.15:8081/repository/maven-snapshots/</url>
 	</snapshotRepository>
