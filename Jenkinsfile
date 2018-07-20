@@ -32,7 +32,7 @@ pipeline {
             steps {
                 echo 'Sonar Scanner'
 		withSonarQubeEnv('sonarqube') {
-      		    sh 'mvn clean install -D sonar.host.http://35.237.97.186:9000'
+      		    sh 'mvn clean install -D sonar.host.http://35.196.68.15:9000'
 		}
             }
         }
@@ -45,7 +45,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo 'Deploying to nexus'
-		sh 'mvn deploy -DaltDeploymentRepository=maven-snapshots::default::http://35.231.132.192:8081/repository/maven-snapshots'
+		sh 'mvn deploy -DaltDeploymentRepository=maven-snapshots::default::http://35.196.68.15:8081/repository/maven-snapshots'
             }
         }
 	
