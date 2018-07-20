@@ -39,17 +39,17 @@
 			</plugin>
 		</plugins>
 	</build>
-<distributionManagement>
+	<distributionManagement>
 		<repository>
 			<id>deploymentRepo</id>
-			<name>pipelineRepository</name>
-			<url>http://35.196.68.15:8081//#browse/browse/components:maven-releases</url>
+			<name>Internal Releases</name>
+			<url>http://35.196.68.15:8081//repository/maven-releases/</url>
 		</repository>
  
 		<snapshotRepository>
 			<id>deploymentRepo</id>
-			<name>pipelineRepository</name>
-			<url>http://35.196.68.15:8081//#browse/browse/components:maven-releases</url>
-		</snapshotRepository>
+			<name>Internal Releases</name>
+			<url>http://35.196.68.15:8081//repository/maven-snapshots/</url>
+	</snapshotRepository>
 </distributionManagement>
 </project>
