@@ -45,8 +45,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo 'Deploying to nexus'
-		sh 'mvn deploy'
-		sh '-DaltDeploymentRepository=deploymentRepo::default::http://35.196.68.15:8081'
+		sh 'mvn deploy -DaltDeploymentRepository=maven-releases::default::http://35.231.132.192:8081/repository/maven-releases'
             }
         }
 	
