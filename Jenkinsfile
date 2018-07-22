@@ -28,12 +28,7 @@ pipeline {
             }
         }
         
-        stage('Deploy') {
-            steps {
-                echo 'Deploying to nexus'
-		sh 'mvn clean deploy -DaltDeploymentRepository=maven-snapshots::default::http://35.196.19.59:8081/repository/repositories:maven-snapshots'
-            }
-        }
+
 	
         
     }
