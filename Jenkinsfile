@@ -30,6 +30,9 @@ pipeline {
         }
         stage('Sonar') {
             steps {
+		tools{
+			maven 'Maven'
+		}
                 echo 'Sonar Scanner'
 		withSonarQubeEnv('sonarqube') {
       		    sh 'mvn clean install sonar:sonar -Dsonar.host.http://35.196.19.59:9000'
