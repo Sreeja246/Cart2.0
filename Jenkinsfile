@@ -13,19 +13,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Clean Build'
-                sh 'mvn clean compile'
-            }
-        }
-        stage('Test') {
-            steps {
-                echo 'Testing'
-                sh 'mvn test'
-            }
-        }
-        stage('JaCoCo') {
-            steps {
-                echo 'Code Coverage'
-                jacoco()
+                sh 'mvn clean install'
             }
         }
         stage('Sonar') {
@@ -39,12 +27,7 @@ pipeline {
 		}
             }
         }
-        stage('Package') {
-            steps {
-                echo 'Packaging'
-                sh 'mvn clean package'
-            }
-        }
+        
         stage('Deploy') {
             steps {
                 echo 'Deploying to nexus'
